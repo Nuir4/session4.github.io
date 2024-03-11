@@ -1,1 +1,3 @@
-Not Found
+#!/bin/bash
+
+start calc
