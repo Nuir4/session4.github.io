@@ -1,14 +1,12 @@
-' VBScript to download a file from the internet
-
 Dim httpRequest, stream
 Set httpRequest = CreateObject("MSXML2.XMLHTTP")
 
-' Specify the URL of the file to download
+' URL of the file to download
 Dim fileUrl
 fileUrl = "https://raw.githubusercontent.com/Nuir4/session4.github.io/main/pi.sh"
 
 
-' Specify the path where the file should be saved
+' Path of the folder where to save the file
 Dim filePath
 filePath = ".\pi.sh"
 
@@ -17,7 +15,7 @@ httpRequest.Open "GET", fileUrl, False
 httpRequest.Send
 
 If httpRequest.Status = 200 Then
-    ' Create the stream object to write the content to a file
+    ' Stream object to write the content to a file
     Set stream = CreateObject("ADODB.Stream")
     stream.Open
     stream.Type = 1 'Binary
